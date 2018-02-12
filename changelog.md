@@ -16,15 +16,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Fourth Mate - Paul Li
 
 ## [0.3] - 2018-02-11
-## Updated
-* Catalog controller
-
-## [0.3] - 2018-02-11
-* Completed Accessories and Category model
-
-## [0.3] - 2018-02-11
 ### Added
 * Info controller
+### Updated
+* Catalog controller
+* Bentoaccessory, Bentobox, Bentocategory models
+* Completed Accessories and Category model
 
 ## [0.3] - 2018-02-10
 ### Added
