@@ -212,12 +212,13 @@ class Memory_Model extends Entity implements DataMapper
 	 * 
 	 * @param type $what	Field name to select by
 	 * @param type $which	Value to select
-	 * @return type
+	 * @return array
 	 */
 	function some($what, $which)
 	{
 		$results = array();
-		foreach ($this->_data as $key => $record)
+		$dataArray = json_decode(json_encode($this->_data), true);
+		foreach ($dataArray as $record)
 			if ($record[$what] == $which)
 				$results[] = $record;
 		return $results;
