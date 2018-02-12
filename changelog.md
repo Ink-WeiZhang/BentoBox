@@ -18,10 +18,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [0.3] - 2018-02-11
 ### Added
 * Info controller
-### Updated
-* Catalog controller
-* Bentoaccessory, Bentobox, Bentocategory models
+### Changed
+* Updated Catalog controller
+* Updated Bentoaccessory, Bentobox, Bentocategory models
 * Completed Accessories and Category model
+* CSV Syntax
 
 ## [0.3] - 2018-02-10
 ### Added
