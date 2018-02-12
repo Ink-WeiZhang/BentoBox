@@ -10,12 +10,37 @@ class Catalog extends Application
      */
     public function index()
     {
+        // load the model
+        $this->load->model('Bentoaccessory_model');
+
         // get food in each category from the model
-        // TODO: replace test data with actual data from model
-        $catalogMain = ['main 1', 'main 2', 'main 3', 'main 4'];
-        $catalogSushi = ['sushi 1', 'sushi 2', 'sushi 3', 'sushi 4'];
-        $catalogSide = ['side 1', 'side 2', 'side 3', 'side 4'];
-        $catalogSalad = ['salad 1', 'salad 2', 'salad 3', 'salad 4'];
+        $catalogMain = $this->Bentoaccessory_model->getAccessories('1');
+        $catalogSushi = $this->Bentoaccessory_model->getAccessories('2');
+        $catalogSide = $this->Bentoaccessory_model->getAccessories('3');
+        $catalogSalad = $this->Bentoaccessory_model->getAccessories('4');
+
+        // get food data for each category
+        $mainCells = Array();
+        $sushiCells = Array();
+        $sideCells = Array();
+        $saladCells = Array();
+
+        // build an array of formatted cells for them
+        foreach ($catalogMain as $food) {
+            $mainCells[] = $this->parser->parse('_cell', (array)$food, true);
+        }
+
+        foreach ($catalogSushi as $food) {
+            $sushiCells[] = $this->parser->parse('_cell', (array)$food, true);
+        }
+
+        foreach ($catalogSide as $food) {
+            $sideCells[] = $this->parser->parse('_cell', (array)$food, true);
+        }
+
+        foreach ($catalogSalad as $food) {
+            $saladCells[] = $this->parser->parse('_cell', (array)$food, true);
+        }
 
         // prime the table class
         $this->load->library('table');
@@ -27,16 +52,16 @@ class Catalog extends Application
         $this->table->set_template($parms);
 
         // generate the table
-        $rows = $this->table->make_columns($catalogMain, 4);
+        $rows = $this->table->make_columns($mainCells, 5);
         $this->data['maintable'] = $this->table->generate($rows);
 
-        $rows = $this->table->make_columns($catalogSushi, 4);
+        $rows = $this->table->make_columns($sushiCells, 5);
         $this->data['sushitable'] = $this->table->generate($rows);
 
-        $rows = $this->table->make_columns($catalogSide, 4);
+        $rows = $this->table->make_columns($sideCells, 4);
         $this->data['sidetable'] = $this->table->generate($rows);
 
-        $rows = $this->table->make_columns($catalogSalad, 4);
+        $rows = $this->table->make_columns($saladCells, 5);
         $this->data['saladtable'] = $this->table->generate($rows);
 
         $this->data['pagebody'] = "catalog";
