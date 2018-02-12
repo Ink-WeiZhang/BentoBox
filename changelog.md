@@ -16,6 +16,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Fourth Mate - Paul Li
 
 ## [0.3] - 2018-02-11
+### Updated
+* Bentoaccessory, Bentobox, Bentocategory models
 * Completed Accessories and Category model
 
 ## [0.3] - 2018-02-11

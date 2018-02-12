@@ -4,44 +4,32 @@ class Bentoaccessory_model extends CSV_Model
 {
     function __construct()
     {
-        parent::__construct("accessories.csv");
+        parent::__construct('accessories.csv', 'code');
     }
 
+    /**
+     * Return all or a category of accessories.
+     *
+     * @param null $category    the category code. null = get all accessories
+     * @return array            the array of accessories
+     */
     public function getAccessories($category = null) {
-
         if($category == null) {
-            $accessories = [];
-            foreach($this->all() as $e) {
-                $data = $e->data;
-                $data["code"] = (int)$data["code"];
-                $data["category"] = (int)$data["category"];
-                $data["price"] = (float)$data["price"];
-                $data["calories"] = (int)$data["calories"];
-                $data["weight"] = (int)$data["weight"];
-                $data["presentation"] = (int)$data["presentation"];
-                array_push($accessories, $data);
-            }
-
+            $accessories = $this->all();
             return $accessories;
         } else {
-
-            $accessories = [];
-            foreach($this->getAccessories() as $b) {
-                if($b["category"] == $category)
-                    array_push($accessories, $b);
-            }
-
+            $accessories = $this->some('category', $category);
             return $accessories;
         }
     }
 
+    /**
+     * Return the accessory with a specific code.
+     *
+     * @param string $code  the accessory code
+     * @return mixed        the accessory that's returned
+     */
     public function getAccessory($code) {
-        foreach($this->getAccessories() as $b) {
-            if($b["code"] == $code)
-                return $b;
-        }
-
-        return null;
+        return $this->get($code);
     }
-
 }

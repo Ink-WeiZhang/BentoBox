@@ -4,17 +4,16 @@ class Bentocategory_model extends CSV_Model
 {
 	function __construct()
 	{
-		parent::__construct("category.csv");
+		parent::__construct("category.csv", 'code');
 	}
 
+    /**
+     * Return all accessory categories.
+     *
+     * @return array    all accessory categories
+     */
     public function getCategories() {
-        $categories = [];
-	    foreach($this->all() as $e) {
-            $data = $e->data;
-	        $data["code"] = (int)$data["code"];
-            array_push($categories, $data);
-        }
-
+        $categories = $this->all();
         return $categories;
     }
 
