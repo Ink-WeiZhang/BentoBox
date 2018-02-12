@@ -23,6 +23,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 * Updated Bentoaccessory, Bentobox, Bentocategory models
 * Completed Accessories and Category model
 * CSV Syntax
+* Re-populated changelog to fix git issues
 
 ## [0.3] - 2018-02-10
 ### Added
