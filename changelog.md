@@ -36,6 +36,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [0.3] - 2018-02-10
 ### Added
 * View for catalog page
+* Autoload models
 
 ## [0.3] - 2018-02-08
 * Implemented BentoBox read functionality in models
