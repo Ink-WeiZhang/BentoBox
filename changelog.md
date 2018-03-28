@@ -15,6 +15,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Third Mate - Sheldon Lynn
 - Fourth Mate - Paul Li
 
+## [0.4] - 2018-02-11
+
+### Changed
+* Background image
+
+### Removed
+* Statistics placeholders
+
 ## [0.3] - 2018-02-11
 ### Added
 * Info controller

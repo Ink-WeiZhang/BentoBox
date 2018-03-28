@@ -1,4 +1,5 @@
-<h1>Create your BentoBox!</h1>
+<h1>Create your own BentoBox!</h1>
+
 <div class="container text-center">
   <div class="row">
     <div class="col">
@@ -115,7 +116,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col section">
+        <div class="col section mx-auto">
           <h2>Statistics</h2>
 
           <table class="table table-sm">
@@ -131,31 +132,31 @@
             <tbody>
               <tr>
                 <th scope="row">Weight (g)</th>
-                <td id="mainWeight">Mark</td>
-                <td id="sideWeight">Otto</td>
-                <td id="sushiWeight">@mdo</td>
-                <td id="saladWeight">@mdo</td>
+                <td id="mainWeight"></td>
+                <td id="sideWeight"></td>
+                <td id="sushiWeight"></td>
+                <td id="saladWeight"></td>
               </tr>
               <tr>
                 <th scope="row">Calories</th>
-                <td id="mainCalories">Jacob</td>
-                <td id="sideCalories">Thornton</td>
-                <td id="sushiCalories">@fat</td>
-                <td id="saladCalories">@mdo</td>
+                <td id="mainCalories"></td>
+                <td id="sideCalories"></td>
+                <td id="sushiCalories"></td>
+                <td id="saladCalories"></td>
               </tr>
               <tr>
                 <th scope="row">Presentation</th>
-                <td id="mainPresentation">Larry</td>
-                <td id="sidePresentation">the Bird</td>
-                <td id="sushiPresentation">@twitter</td>
-                <td id="saladPresentation">@mdo</td>
+                <td id="mainPresentation"></td>
+                <td id="sidePresentation"></td>
+                <td id="sushiPresentation"></td>
+                <td id="saladPresentation"></td>
               </tr>
               <tr>
                 <th scope="row">Price ($)</th>
-                <td id="mainPrice">Larry</td>
-                <td id="sidePrice">the Bird</td>
-                <td id="sushiPrice">@twitter</td>
-                <td id="mainPrice">@mdo</td>
+                <td id="mainPrice"></td>
+                <td id="sidePrice"></td>
+                <td id="sushiPrice"></td>
+                <td id="mainPrice"></td>
               </tr>
             </tbody>
           </table>
