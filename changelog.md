@@ -15,6 +15,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - Third Mate - Sheldon Lynn
 - Fourth Mate - Paul Li
 
+# Changes for assignment 2
+
+## Controllers
+
+## Models
+* Added entity model for accessories
+
+## Views
+
+# Changes for assignment 1
+
 ## [0.4] - 2018-02-11
 
 ### Changed
