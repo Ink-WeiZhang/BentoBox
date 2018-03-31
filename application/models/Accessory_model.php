@@ -6,7 +6,7 @@ class Accessory_model extends Entity
     protected $code;
     protected $name;
     protected $category;
-    protected $image;
+    protected $image; // represents the image name
     protected $price;
     protected $calories;
     protected $weight;
@@ -24,37 +24,37 @@ class Accessory_model extends Entity
         return $this;
     }
 
-    // name must be alphabetic
+    // name must be alphabetic (spaces are allowed)
     public function setName($value) {
         if (empty($value)) {
-            throw new Exception('Name cannot be empty');
+            throw new Exception('Food name cannot be empty');
         }
         if (!ctype_alpha(str_replace(' ', '', $value))) {
-            throw new Exception('Name must be alphabetic');
+            throw new Exception('Food name can only have letters and spaces');
         }
         $this->name = $value;
         return $this;
     }
 
-    // name must be an integer between 1 and 4, inclusive
+    // category must be an integer in the range of 1 to 4
     public function setCategory($value) {
         if (empty($value)) {
             throw new Exception('Category cannot be empty');
         }
         if (!is_int($value) || $value < 1 || $value > 4) {
-            throw new Exception('Category must be a number from 1 to 4');
+            throw new Exception('Category must be an integer in the range of 1 to 4');
         }
         $this->category = $value;
         return $this;
     }
 
-    // image must be a file name with the png extension
+    // image must be alphanumeric (spaces are allowed)
     public function setImage($value) {
         if (empty($value)) {
-            throw new Exception('Image cannot be empty');
+            throw new Exception('Image filename cannot be empty');
         }
         if (!ctype_alnum(str_replace(' ', '', $value))) {
-            throw new Exception('Image must be alphanumeric');
+            throw new Exception('Image filename can only have alphanumeric characters and spaces');
         }
         $this->image = $value;
         return $this;
@@ -96,13 +96,13 @@ class Accessory_model extends Entity
         return $this;
     }
 
-    // presentation must be a positive integer between 1 and 10, inclusive
+    // presentation must be a positive integer in the range of 1 to 4
     public function setPresentation($value) {
         if (empty($value)) {
             throw new Exception('Presentation cannot be empty');
         }
         if (!is_int($value) || $value < 1 || $value > 10) {
-            throw new Exception('Presentation must be an integer from 1 to 10');
+            throw new Exception('Presentation must be an integer in the range of 1 to 10');
         }
         $this->presentation = $value;
         return $this;
