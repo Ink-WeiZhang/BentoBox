@@ -24,13 +24,14 @@ class Accessory_model extends Entity
         return $this;
     }
 
-    // name must be alphabetic (spaces are allowed)
+    // food name can only have letters, spaces and hyphens
+    // spaces and hyphens are not allowed as the first character of the filename
     public function setName($value) {
         if (empty($value)) {
             throw new Exception('Food name cannot be empty');
         }
-        if (!ctype_alpha(str_replace(' ', '', $value))) {
-            throw new Exception('Food name can only have letters and spaces');
+        if (preg_match('^[a-zA-z][a-zA-z- ]*\.(jpg|png)$', $value) === 0) {
+            throw new Exception('Food name can only have letters, spaces and hyphens. Spaces and hyphens are not allowed as the first character of the filename.');
         }
         $this->name = $value;
         return $this;
@@ -48,13 +49,14 @@ class Accessory_model extends Entity
         return $this;
     }
 
-    // image must be alphanumeric (spaces are allowed)
+    // image filename can only have alphanumeric characters, spaces and hyphens, and end in either .jpg or .png
+    //  spaces and hyphens are not allowed as the first character of the filename
     public function setImage($value) {
         if (empty($value)) {
             throw new Exception('Image filename cannot be empty');
         }
-        if (!ctype_alnum(str_replace(' ', '', $value))) {
-            throw new Exception('Image filename can only have alphanumeric characters and spaces');
+        if (preg_match('^[a-zA-z0-9][a-zA-z0-9- ]*\.(jpg|png)$', $value) === 0) {
+            throw new Exception('Image filename is not valid. The filename can only have alphanumeric characters, spaces and hyphens, and end in either .jpg or .png. Spaces and hyphens are not allowed as the first character of the filename');
         }
         $this->image = $value;
         return $this;
