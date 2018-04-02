@@ -12,6 +12,34 @@ class Accessory_model extends Entity
     protected $weight;
     protected $presentation;
 
+    public function getCalories(){
+        return $this->calories;
+    }
+
+    public function getCategory(){
+        return $this->category;
+    }
+
+    public function getCode(){
+        return $this->code;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getPrice() {
+        return $this->price;
+    }
+
+    public function getWeight(){
+        return $this->weight;
+    }
+
+    public function getPresentation(){
+        return $this->presentation;
+    }
+
     // code must be a positive integer
     public function setCode($value) {
         if (empty($value)) {
