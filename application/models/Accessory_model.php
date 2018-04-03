@@ -24,6 +24,10 @@ class Accessory_model extends Entity
         return $this->code;
     }
 
+    public function getImageName(){
+        return $this->image;
+    }
+
     public function getName() {
         return $this->name;
     }
@@ -58,7 +62,7 @@ class Accessory_model extends Entity
         if (empty($value)) {
             throw new Exception('Food name cannot be empty');
         }
-        if (preg_match('^[a-zA-z][a-zA-z- ]*\.(jpg|png)$', $value) === 0) {
+        if (preg_match('/^[a-zA-z][a-zA-z- ]*/', $value) === 0) {
             throw new Exception('Food name can only have letters, spaces and hyphens. Spaces and hyphens are not allowed as the first character of the filename.');
         }
         $this->name = $value;
@@ -83,7 +87,7 @@ class Accessory_model extends Entity
         if (empty($value)) {
             throw new Exception('Image filename cannot be empty');
         }
-        if (preg_match('^[a-zA-z0-9][a-zA-z0-9- ]*\.(jpg|png)$', $value) === 0) {
+        if (preg_match('/^[a-zA-z0-9][a-zA-z0-9- ]*\.(jpg|png)$/', $value) === 0) {
             throw new Exception('Image filename is not valid. The filename can only have alphanumeric characters, spaces and hyphens, and end in either .jpg or .png. Spaces and hyphens are not allowed as the first character of the filename');
         }
         $this->image = $value;
