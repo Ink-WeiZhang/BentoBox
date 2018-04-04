@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Catalog extends Application
 {
@@ -20,10 +20,10 @@ class Catalog extends Application
         $catalogSalad = $this->Bentoaccessory_model->getAccessories('4');
 
         // get food data for each category
-        $mainCells = Array();
-        $sushiCells = Array();
-        $sideCells = Array();
-        $saladCells = Array();
+        $mainCells = array();
+        $sushiCells = array();
+        $sideCells = array();
+        $saladCells = array();
 
         // build an array of formatted cells for them
         foreach ($catalogMain as $food) {
@@ -45,7 +45,7 @@ class Catalog extends Application
         // prime the table class
         $this->load->library('table');
         $parms = array(
-            'table_open' => '<table border="1" tableclass="catalog">',
+            'table_open' => '<table class="mx-auto" border="0" cellpadding="10">',
             'cell_start' => '<td class="image">',
             'cell_alt_start' => '<td class="image">'
         );
@@ -67,5 +67,4 @@ class Catalog extends Application
         $this->data['pagebody'] = "catalog";
         $this->render();
     }
-
 }
