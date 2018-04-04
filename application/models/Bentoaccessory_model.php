@@ -4,7 +4,7 @@ class Bentoaccessory_model extends CSV_Model
 {
     function __construct()
     {
-        parent::__construct('accessories.csv', 'code');
+        parent::__construct('../test_data/accessories.csv', 'code');
     }
 
     /**

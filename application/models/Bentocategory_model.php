@@ -4,7 +4,7 @@ class Bentocategory_model extends CSV_Model
 {
 	function __construct()
 	{
-		parent::__construct("category.csv", 'code');
+		parent::__construct("../test_data/category.csv", 'code');
 	}
 
     /**
