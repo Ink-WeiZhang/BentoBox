@@ -125,5 +125,7 @@ modules.xml
 
 # End of https://www.gitignore.io/api/phpstorm,intellij+all
 
+# real data
+data/
 
 tests/coverage

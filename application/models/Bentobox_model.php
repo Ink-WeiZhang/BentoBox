@@ -4,7 +4,7 @@ class Bentobox_model extends CSV_Model
 {
     function __construct()
     {
-        parent::__construct("bentoBoxes.csv", 'code');
+        parent::__construct("../test_data/bentoBoxes.csv", 'code');
     }
 
     // TODO: don't know how this works, so it's not fixed
