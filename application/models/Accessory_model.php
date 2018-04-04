@@ -12,6 +12,38 @@ class Accessory_model extends Entity
     protected $weight;
     protected $presentation;
 
+    public function getCalories(){
+        return $this->calories;
+    }
+
+    public function getCategory(){
+        return $this->category;
+    }
+
+    public function getCode(){
+        return $this->code;
+    }
+
+    public function getImageName(){
+        return $this->image;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getPrice() {
+        return $this->price;
+    }
+
+    public function getWeight(){
+        return $this->weight;
+    }
+
+    public function getPresentation(){
+        return $this->presentation;
+    }
+
     // code must be a positive integer
     public function setCode($value) {
         if (empty($value)) {
@@ -30,7 +62,7 @@ class Accessory_model extends Entity
         if (empty($value)) {
             throw new Exception('Food name cannot be empty');
         }
-        if (preg_match('^[a-zA-z][a-zA-z- ]*\.(jpg|png)$', $value) === 0) {
+        if (preg_match('/^[a-zA-z][a-zA-z- ]*/', $value) === 0) {
             throw new Exception('Food name can only have letters, spaces and hyphens. Spaces and hyphens are not allowed as the first character of the filename.');
         }
         $this->name = $value;
@@ -55,7 +87,7 @@ class Accessory_model extends Entity
         if (empty($value)) {
             throw new Exception('Image filename cannot be empty');
         }
-        if (preg_match('^[a-zA-z0-9][a-zA-z0-9- ]*\.(jpg|png)$', $value) === 0) {
+        if (preg_match('/^[a-zA-z0-9][a-zA-z0-9- ]*\.(jpg|png)$/', $value) === 0) {
             throw new Exception('Image filename is not valid. The filename can only have alphanumeric characters, spaces and hyphens, and end in either .jpg or .png. Spaces and hyphens are not allowed as the first character of the filename');
         }
         $this->image = $value;
