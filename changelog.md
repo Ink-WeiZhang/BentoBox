@@ -21,6 +21,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## Models
 * Added entity model for accessories
+* Added unit testing models
 
 ## Views
 
