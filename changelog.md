@@ -25,9 +25,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## Views
 
+## User Roles
+* Added roles (guest, user, admin)
+* Added a way to change and see roles in the navigation bar
+
 ## Other Changes
 * Moved data out of public folder
 * Separated test data and real data
+* Enabled file-based sessions
 
 # Changes for assignment 1
 
