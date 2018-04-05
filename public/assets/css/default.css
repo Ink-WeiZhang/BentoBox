@@ -97,6 +97,11 @@ table {
   border-bottom-color: rgba(255, 255, 255, .25);
 }
 
+.nav-role-changer, .nav-role-changer:hover, .nav-role-changer:focus {
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+}
+
 .nav-masthead .nav-link+.nav-link {
   margin-left: 1rem;
 }

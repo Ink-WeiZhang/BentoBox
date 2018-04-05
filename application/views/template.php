@@ -22,6 +22,14 @@
             <nav class="nav nav-masthead justify-content-center">
                 <a class="nav-link" href="/">Home</a>
                 <a class="nav-link" href="/catalog">Catalog</a>
+                <div class="dropdown nav-link">
+                    <a class="dropdown-toggle nav-role-changer" data-toggle="dropdown" href="#">User Role ({role})<b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li><a class="text-dark" href="/roles/actor/Guest">Guest</a></li>
+                        <li><a class="text-dark" href="/roles/actor/User">User</a></li>
+                        <li><a class="text-dark" href="/roles/actor/Admin">Admin</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
