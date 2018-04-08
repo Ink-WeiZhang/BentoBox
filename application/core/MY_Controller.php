@@ -33,6 +33,12 @@ class Application extends CI_Controller
 	function render($template = 'template')
 	{
 		$this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
+		$role = $this->session->userdata('userrole');
+		if ($role == null)
+        {
+            $this->session->set_userdata('userrole', ROLE_GUEST);
+        }
+		$this->data['role'] = $this->session->userdata('userrole');
 		$this->parser->parse('template', $this->data);
 	}
 
